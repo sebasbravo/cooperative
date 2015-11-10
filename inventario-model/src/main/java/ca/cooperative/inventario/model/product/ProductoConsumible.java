@@ -1,4 +1,4 @@
-package ca.cooperative.inventario.model.producto;
+package ca.cooperative.inventario.model.product;
 
 public class ProductoConsumible extends Producto {
 	

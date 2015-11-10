@@ -9,7 +9,6 @@
   </parent>
   <groupId>ca.cooperative.inventario.model</groupId>
   <artifactId>inventario-model</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>inventario-model</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -23,11 +22,6 @@
       <scope>test</scope>
     </dependency>
     
-    <dependency>
-    	<groupId>ca.cooperative.inventario.dao</groupId>
-    	<artifactId>inventario-dao</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
     
   </dependencies>
 </project>
