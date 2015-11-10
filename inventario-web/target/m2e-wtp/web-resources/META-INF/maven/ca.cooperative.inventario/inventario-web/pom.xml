@@ -38,18 +38,6 @@
       <spec.snapshot.version>2.2</spec.snapshot.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>javax.faces</groupId>
-            <artifactId>javax.faces-api</artifactId>
-            <version>${spec.snapshot.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
-        </dependency>
         
          <dependency>
     	<groupId>ca.cooperative.inventario.model</groupId>
