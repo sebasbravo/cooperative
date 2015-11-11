@@ -1,4 +1,4 @@
-package ca.cooperative.inventario.model.product;
+package ca.cooperative.inventario.model;
 
 public class ProductType {
 	

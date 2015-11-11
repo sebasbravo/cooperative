@@ -7,9 +7,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>ca.cooperative.inventario</groupId>
     <artifactId>inventario-web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>${project.artifactId}</name>
     <description>A simple project with war packaging that depends on JSF 2.2 and 
@@ -40,8 +38,8 @@
     <dependencies>
         
          <dependency>
-    	<groupId>ca.cooperative.inventario.model</groupId>
-    	<artifactId>inventario-model</artifactId>
+    	<groupId>ca.cooperative.inventario.model-dao</groupId>
+    	<artifactId>inventario-model-dao</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
     </dependencies>

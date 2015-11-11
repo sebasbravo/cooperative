@@ -7,8 +7,73 @@
   <packaging>pom</packaging>
   
    <properties>
-        <java.version>1.8</java.version>
+       <!-- Generic properties -->
+		<java.version>1.8</java.version>
+
+		<!-- Web -->
+		<jsp.version>2.2</jsp.version>
+		<jstl.version>1.2</jstl.version>
+		<servlet.version>3.0.1</servlet.version>
+		
+		<!-- Spring -->
+		<spring-framework.version>4.1.7.RELEASE</spring-framework.version>
+
+		<!-- Spring Security -->
+		<spring-security.version>4.0.1.RELEASE</spring-security.version>
+		
+		<!-- Spring Data -->
+		<spring-framework.data.version>1.8.0.RELEASE</spring-framework.data.version>
+		
+		<!-- Hibernate / JPA -->
+		<hibernate.version>4.2.1.Final</hibernate.version>
+
+		<!-- Logging -->
+		<logback.version>1.0.13</logback.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		
+		<!-- jackson json JSON Processing API -->
+		<jackson.databind-version>2.2.3</jackson.databind-version>
+		
+		<!-- JUnit test -->
+		<junit.version>4.11</junit.version>
+		
+		<!-- Quartz scheduling framework -->
+		<quartz.scheduling.version>2.2.1</quartz.scheduling.version>
+
+        
+        
    </properties>
+   
+   <dependencies>
+   
+   <!-- Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+				
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+   
+   <!-- Test -->
+   <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+   
+   </dependencies>
    
     <build>
         <plugins>
@@ -24,8 +89,7 @@
          </plugins>
          </build>
   <modules>
-    <module>inventario-dao</module>
-    <module>inventario-model</module>
+    <module>inventario-model-dao</module>
     <module>inventario-web</module>
   </modules>
 </project>

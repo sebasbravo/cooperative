@@ -1,10 +1,11 @@
-package ca.cooperative.inventario.model.product;
+package ca.cooperative.inventario.model;
 
 public class Product {
 	
 	private ProductType productType;
 	private String codeProduct;
 	private Manufacturer manufacturer;
+	private String name;
 	private String description;
 	private String condition;
 	private boolean actif;
@@ -42,6 +43,17 @@ public class Product {
 
 	public void setManufacturer(Manufacturer manufacturer) {
 		this.manufacturer = manufacturer;
+	}
+	
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 

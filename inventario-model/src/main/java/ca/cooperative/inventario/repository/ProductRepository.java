@@ -4,17 +4,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import ca.cooperative.inventario.model.product.Product;
-
-
+import ca.cooperative.inventario.model.Product;
 
 public interface ProductRepository {
-	
+
 	List<Product> getAllProducts();
-	Product getProductByCode(String productId); 
-	List<Product> getProductsByCategory(String category);
+
+	Product getProductByCode(String codeProduct);
+
+	List<Product> getProductsByIdType(int idType);
+
 	Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
-	List<Product> getProductsByManufacturer(String manufacturer);
+
+	List<Product> getProductsByIdManufacturer(int idManufacturer);
+
 	void addProduct(Product product);
 
 }
