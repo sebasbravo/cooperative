@@ -12,12 +12,13 @@ public interface ProductService {
 
 	Product getProductByCode(String codeProduct);
 
-	List<Product> getProductsByIdType(int idType);
+	List<Product> getProductsByCategory(int categoryId);
 
 	Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
 
 	List<Product> getProductsByIdManufacturer(int idManufacturer);
 
 	void addProduct(Product product);
+
      
 }

@@ -2,27 +2,18 @@ package ca.cooperative.inventario.model;
 
 public class Product {
 	
-	private ProductType productType;
+	
 	private String codeProduct;
-	private Manufacturer manufacturer;
 	private String name;
 	private String description;
+	private Manufacturer manufacturer;
+	private Category category;
 	private String condition;
 	private boolean actif;
 	
 	
 	public Product() {
 		super();
-	}
-
-
-	public ProductType getProductType() {
-		return productType;
-	}
-
-
-	public void setProductType(ProductType productType) {
-		this.productType = productType;
 	}
 
 
@@ -34,17 +25,6 @@ public class Product {
 	public void setCodeProduct(String codeProduct) {
 		this.codeProduct = codeProduct;
 	}
-
-
-	public Manufacturer getManufacturer() {
-		return manufacturer;
-	}
-
-
-	public void setManufacturer(Manufacturer manufacturer) {
-		this.manufacturer = manufacturer;
-	}
-	
 
 
 	public String getName() {
@@ -67,6 +47,26 @@ public class Product {
 	}
 
 
+	public Manufacturer getManufacturer() {
+		return manufacturer;
+	}
+
+
+	public void setManufacturer(Manufacturer manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
+
+	public Category getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+
 	public String getCondition() {
 		return condition;
 	}
@@ -85,7 +85,9 @@ public class Product {
 	public void setActif(boolean actif) {
 		this.actif = actif;
 	}
+
 	
+		
 	
 
 }

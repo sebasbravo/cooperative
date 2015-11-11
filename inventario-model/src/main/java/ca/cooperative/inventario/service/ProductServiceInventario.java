@@ -11,7 +11,7 @@ import ca.cooperative.inventario.model.Product;
 import ca.cooperative.inventario.repository.ProductRepository;
 
 @Service
-public class ProductServiceFacade implements ProductService {
+public class ProductServiceInventario implements ProductService {
 	
 	@Autowired
 	private ProductRepository productRepository;
@@ -24,11 +24,6 @@ public class ProductServiceFacade implements ProductService {
 	@Override
 	public Product getProductByCode(String codeProduct) {
 		return productRepository.getProductByCode(codeProduct);
-	}
-
-	@Override
-	public List<Product> getProductsByIdType(int idType) {
-		return productRepository.getProductsByIdType(idType);
 	}
 
 	@Override
@@ -45,6 +40,11 @@ public class ProductServiceFacade implements ProductService {
 	public void addProduct(Product product) {
 		productRepository.addProduct(product);
 
+	}
+
+	@Override
+	public List<Product> getProductsByCategory(int categoryId) {
+		return productRepository.getProductsByCategory(categoryId);
 	}
 
 }

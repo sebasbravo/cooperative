@@ -3,6 +3,8 @@
 	<name>coopapp</name>
 	<comment></comment>
 	<projects>
+		<project>coopwebapp</project>
+		<project>inventario-model</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

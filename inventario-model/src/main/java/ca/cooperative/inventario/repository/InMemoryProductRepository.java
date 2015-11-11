@@ -7,9 +7,10 @@ import java.util.Set;
 
 import org.springframework.stereotype.Repository;
 
+import ca.cooperative.inventario.model.Category;
 import ca.cooperative.inventario.model.Manufacturer;
 import ca.cooperative.inventario.model.Product;
-import ca.cooperative.inventario.model.ProductType;
+
 
 
 @Repository
@@ -20,11 +21,11 @@ public class InMemoryProductRepository implements ProductRepository {
 	
 
 	public InMemoryProductRepository() {
-		ProductType type = new ProductType(1, "Desengrasantes");
+		Category category = new Category(1, "Desengrasantes");
 		Manufacturer manufacturer = new Manufacturer(1, "Micro");
 		
 		Product microOrange = new Product();
-		microOrange.setProductType(type);
+		microOrange.setCategory(category);
 		microOrange.setCodeProduct("654504");
 		microOrange.setName("Micro Orange");
 		microOrange.setDescription("Desengrasante concentrado");
@@ -33,7 +34,7 @@ public class InMemoryProductRepository implements ProductRepository {
 		microOrange.setActif(true);
 		
 		Product astrolan = new Product();
-		astrolan.setProductType(type);
+		astrolan.setCategory(category);
 		astrolan.setCodeProduct("63624R");
 		astrolan.setName("Astrolan");
 		astrolan.setDescription("Blanqueador");
@@ -66,20 +67,6 @@ public class InMemoryProductRepository implements ProductRepository {
 	}
 
 	@Override
-	public List<Product> getProductsByIdType(int idType) {
-		List<Product> productsByType = new ArrayList<>();
-		
-		for (Product product : products) {
-			if(idType == product.getProductType().getIdProductType()){
-				productsByType.add(product);
-				
-			}
-		}
-		
-		return productsByType;
-	}
-
-	@Override
 	public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
 		// TODO Auto-generated method stub
 		return null;
@@ -102,7 +89,20 @@ public class InMemoryProductRepository implements ProductRepository {
 	@Override
 	public void addProduct(Product product) {
 		products.add(product);
+	}
 
+	@Override
+	public List<Product> getProductsByCategory(int categoryId) {
+	List<Product> productsByCategory = new ArrayList<>();
+		
+		for (Product product : products) {
+			if(categoryId == product.getCategory().getCategoryId()){
+				productsByCategory.add(product);
+				
+			}
+		}
+		
+		return productsByCategory;
 	}
 
 }

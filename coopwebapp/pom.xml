@@ -12,6 +12,7 @@
   <packaging>war</packaging>
   <name>coopwebapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
   <build>
     <finalName>coopwebapp</finalName>
   </build>
