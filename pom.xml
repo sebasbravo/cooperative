@@ -281,8 +281,7 @@
          </plugins>
          </build>
   <modules>
-    <module>inventario-model</module>
-    
-    <module>coopwebapp</module>
+    <module>inventario-model</module>    
+    <module>coopweb</module>
   </modules>
 </project>
