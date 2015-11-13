@@ -6,6 +6,24 @@
     					http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                         http://www.springframework.org/schema/security 
                         http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+                        
+<http auto-config="true" use-expressions="true">
+
+		<intercept-url pattern="/add" access="hasRole('ROLE_ADMIN')" />
+		
+		<form-login login-page="/user/login" 
+               default-target-url="/add"   
+               authentication-failure-url="/loginfailed"/>
+        <logout logout-success-url="/logout" />
+	</http>
+	
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="Admin" password="Admin123" authorities="ROLE_ADMIN" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>                        
 
 
 </beans:beans>
