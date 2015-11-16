@@ -31,10 +31,11 @@
 	    <property name="suffix" value=".jsp"/>   	     
 	</bean>
  	
- 	<bean id= "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-   		<property name="basename" value="messages" />
-   		
-	</bean>
+ 	<!-- MessageSource ReloadableResourceBundleMessageSource configuration -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
+    	<property name="basenames" value="classpath:lang,classpath:util,classpath:messages"/>  
+    	<property name="cacheSeconds" value="1"/>
+  	</bean>  
 	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
