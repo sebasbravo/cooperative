@@ -7,7 +7,10 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ca.cooperative.inventario.model.Category;
+import ca.cooperative.inventario.model.Manufacturer;
 import ca.cooperative.inventario.model.Product;
+import ca.cooperative.inventario.model.Unit;
 import ca.cooperative.inventario.repository.ProductRepository;
 
 @Service
@@ -32,8 +35,8 @@ public class ProductServiceInventario implements ProductService {
 	}
 
 	@Override
-	public List<Product> getProductsByIdManufacturer(int idManufacturer) {
-		return productRepository.getProductsByIdManufacturer(idManufacturer);
+	public List<Product> getProductsByManufacturer(Manufacturer manufacturer) {
+		return productRepository.getProductsByManufacturer(manufacturer);
 	}
 
 	@Override
@@ -43,8 +46,13 @@ public class ProductServiceInventario implements ProductService {
 	}
 
 	@Override
-	public List<Product> getProductsByCategory(int categoryId) {
-		return productRepository.getProductsByCategory(categoryId);
+	public List<Product> getProductsByCategory(Category category) {
+		return productRepository.getProductsByCategory(category);
+	}
+
+	@Override
+	public List<Product> getProductsByUnit(Unit unit) {
+		return productRepository.getProductsByUnit(unit);
 	}
 
 }

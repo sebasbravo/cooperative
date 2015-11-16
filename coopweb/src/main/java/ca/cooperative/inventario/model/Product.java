@@ -8,7 +8,9 @@ public class Product {
 	private String description;
 	private Manufacturer manufacturer;
 	private Category category;
+	private Unit unit;
 	private String condition;
+	private String serial;
 	private boolean actif;
 	
 	
@@ -65,6 +67,18 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+	
+	
+
+
+	public Unit getUnit() {
+		return unit;
+	}
+
+
+	public void setUnit(Unit unit) {
+		this.unit = unit;
+	}
 
 
 	public String getCondition() {
@@ -84,6 +98,16 @@ public class Product {
 
 	public void setActif(boolean actif) {
 		this.actif = actif;
+	}
+
+
+	public String getSerial() {
+		return serial;
+	}
+
+
+	public void setSerial(String serial) {
+		this.serial = serial;
 	}
 
 	

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import ca.cooperative.inventario.model.Category;
 import ca.cooperative.inventario.model.Manufacturer;
 import ca.cooperative.inventario.model.Product;
+import ca.cooperative.inventario.model.Unit;
 
 
 
@@ -21,11 +22,13 @@ public class InMemoryProductRepository implements ProductRepository {
 	
 
 	public InMemoryProductRepository() {
-		Category category = new Category(1, "Desengrasantes");
-		Manufacturer manufacturer = new Manufacturer(1, "Micro");
+		Category category = new Category(1, "Desengrasantes","desengrasante multiuso");
+		Unit unit = new Unit(1, "cm3", "centimetros cubicos");
+		Manufacturer manufacturer = new Manufacturer(1, "Micro","Micro-orange");
 		
 		Product microOrange = new Product();
 		microOrange.setCategory(category);
+		microOrange.setUnit(unit);
 		microOrange.setCodeProduct("654504");
 		microOrange.setName("Micro Orange");
 		microOrange.setDescription("Desengrasante concentrado");
@@ -35,6 +38,7 @@ public class InMemoryProductRepository implements ProductRepository {
 		
 		Product astrolan = new Product();
 		astrolan.setCategory(category);
+		astrolan.setUnit(unit);
 		astrolan.setCodeProduct("63624R");
 		astrolan.setName("Astrolan");
 		astrolan.setDescription("Blanqueador");
@@ -76,17 +80,17 @@ public class InMemoryProductRepository implements ProductRepository {
 	}
 
 	@Override
-	public List<Product> getProductsByIdManufacturer(int idManufacturer) {
-		List<Product> productsByIdManufacturer = new ArrayList<>();
+	public List<Product> getProductsByManufacturer(Manufacturer manufacturer) {
+		List<Product> productsByManufacturer = new ArrayList<>();
 		
 		for (Product product : products) {
-			if(idManufacturer == product.getManufacturer().getIdManufacturer()){
-				productsByIdManufacturer.add(product);
+			if(manufacturer.getIdManufacturer() == product.getManufacturer().getIdManufacturer()){
+				productsByManufacturer.add(product);
 				
 			}
 		}
 		
-		return productsByIdManufacturer;
+		return productsByManufacturer;
 	}
 
 	@Override
@@ -95,17 +99,31 @@ public class InMemoryProductRepository implements ProductRepository {
 	}
 
 	@Override
-	public List<Product> getProductsByCategory(int categoryId) {
+	public List<Product> getProductsByCategory(Category category) {
 	List<Product> productsByCategory = new ArrayList<>();
 		
 		for (Product product : products) {
-			if(categoryId == product.getCategory().getCategoryId()){
+			if(category.getCategoryId() == product.getCategory().getCategoryId()){
 				productsByCategory.add(product);
 				
 			}
 		}
 		
 		return productsByCategory;
+	}
+
+	@Override
+	public List<Product> getProductsByUnit(Unit unit) {
+List<Product> productsByUnit = new ArrayList<>();
+		
+		for (Product product : products) {
+			if(unit.getUnitId() == product.getUnit().getUnitId()){
+				productsByUnit.add(product);
+				
+			}
+		}
+		
+		return productsByUnit;
 	}
 
 }

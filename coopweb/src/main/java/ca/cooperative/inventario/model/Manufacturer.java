@@ -4,6 +4,7 @@ public class Manufacturer {
 	
 	private int idManufacturer;
 	private String name;
+	private String decription;
 	
 	
 	
@@ -13,10 +14,11 @@ public class Manufacturer {
 
 
 
-	public Manufacturer(int idManufacturer, String name) {
+	public Manufacturer(int idManufacturer, String name, String decription) {
 		super();
 		this.idManufacturer = idManufacturer;
 		this.name = name;
+		this.decription = decription;
 	}
 
 
@@ -42,6 +44,19 @@ public class Manufacturer {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+
+	public String getDecription() {
+		return decription;
+	}
+
+
+
+	public void setDecription(String decription) {
+		this.decription = decription;
+	}
+	
 	
 	
 
