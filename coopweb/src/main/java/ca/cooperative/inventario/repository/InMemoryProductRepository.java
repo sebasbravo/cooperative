@@ -29,7 +29,7 @@ public class InMemoryProductRepository implements ProductRepository {
 		Product microOrange = new Product();
 		microOrange.setCategory(category);
 		microOrange.setUnit(unit);
-		microOrange.setCodeProduct("654504");
+		microOrange.setProductCode("654504");
 		microOrange.setName("Micro Orange");
 		microOrange.setDescription("Desengrasante concentrado");
 		microOrange.setCondition("nuevo");
@@ -39,7 +39,7 @@ public class InMemoryProductRepository implements ProductRepository {
 		Product astrolan = new Product();
 		astrolan.setCategory(category);
 		astrolan.setUnit(unit);
-		astrolan.setCodeProduct("63624R");
+		astrolan.setProductCode("63624R");
 		astrolan.setName("Astrolan");
 		astrolan.setDescription("Blanqueador");
 		astrolan.setCondition("nuevo");
@@ -61,7 +61,7 @@ public class InMemoryProductRepository implements ProductRepository {
 		Product productByCode = null;
 		
 		for (Product product : products) {
-			if(product != null && product.getCodeProduct() != null && product.getCodeProduct().equals(productCode)){
+			if(product != null && product.getProductCode() != null && product.getProductCode().equals(productCode)){
 				productByCode = product;
 				break;
 			}			

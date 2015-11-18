@@ -1,9 +1,11 @@
 package ca.cooperative.inventario.model;
 
+import java.math.BigDecimal;
+
 public class Product {
 	
 	
-	private String codeProduct;
+	private String productCode;
 	private String name;
 	private String description;
 	private Manufacturer manufacturer;
@@ -11,6 +13,8 @@ public class Product {
 	private Unit unit;
 	private String condition;
 	private String serial;
+	private BigDecimal price;
+	private int quantity;
 	private boolean actif;
 	
 	
@@ -19,13 +23,13 @@ public class Product {
 	}
 
 
-	public String getCodeProduct() {
-		return codeProduct;
+	public String getProductCode() {
+		return productCode;
 	}
 
 
-	public void setCodeProduct(String codeProduct) {
-		this.codeProduct = codeProduct;
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
 	}
 
 
@@ -110,8 +114,24 @@ public class Product {
 		this.serial = serial;
 	}
 
-	
-		
-	
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}	
 
 }
